@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do List</title>
+  </head>
+  <style>
+    body {
+      background-color: #f6f5f2;
+    }
+    #center {
+      width: 400px;
+      height: 600px;
+      border: 4px solid #f3d0d7;
+      padding: 0 10px;
+      border-radius: 10px;
+      margin: 10px auto;
+      overflow-y: auto;
+    }
+    p {
+      background-color: yellow;
+      padding: 10px 5px;
+      border-radius: 10px;
+      font-size: larger;
+      text-align: center;
+      margin: 20px;
+    }
+    #top {
+      position: static;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 30px;
+    }
+    #input {
+      background-color: #ffefef;
+      margin: 5px 10px;
+      padding: 10px;
+      border: 3.5px solid #ffbfbf;
+    }
+    button {
+      background-color: #ffefef;
+      margin: 5px 10px;
+      padding: 10px;
+      border: 3px dashed #f3d0d7;
+      color: #d37676;
+    }
+    button:active {
+      background-color: #ca8787;
+      color: #f6f5f2;
+    }
+    input::placeholder {
+      color: #d37676;
+    }
+    input:hover {
+      background-color: #f6f5f2;
+    }
+  </style>
+  <body>
+    <div id="top">
+      <input id="input" type="text" placeholder="Add to do List" />
+      <button onclick="clickk()">CLICK✔</button>
+    </div>
+    <div id="center"></div>
+  </body>
+  <script>
+    const fruits = [];
+    const input = document.querySelector("#input");
+    function clickk() {
+      const inputValue = input.value;
+
+      const pTag = document.createElement("p");
+      pTag.innerHTML += inputValue;
+
+      const color = [];
+      for (let i = 0; i < 3; i++) {
+        const randNum = parseInt(Math.random() * 256);
+        color.push(randNum);
+      }
+      pTag.style.backgroundColor = `rgb(${color.toString()})`;
+
+      document.querySelector("#center").appendChild(pTag);
+
+      input.value = "";
+
+      const luma = 0.2126 * color[0] + 0.7152 * color[1] + 0.0722 * color[2];
+
+      pTag.style.color = luma <= 155 ? "white" : "black";
+    }
+  </script>
+</html>
