@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="messenger.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Messenger</title>
+  </head>
+  <body>
+    <img class="background" src="../img/background.png" alt="" />
+    <div class="container">
+      <div class="header">
+        <button class="btn">
+          <img src="../img/left-arrow.png" alt="" width="30" height="30" />
+        </button>
+        <div id="a">
+          <img
+            class="profile"
+            src="../img/profile.png"
+            alt=""
+            width="40"
+            height="40"
+          />
+          <span></span>
+        </div>
+        <div class="info-block">
+          <p class="username">🐶</p>
+          <p class="status">현재 활동중</p>
+        </div>
+        <div class="call-box">
+          <button class="btn">
+            <img src="../img/phone-call.png" width="20" height="20" alt="" />
+          </button>
+          <button class="btn">
+            <img src="../img/video-call.png" width="20" height="20" alt="" />
+          </button>
+        </div>
+      </div>
+      <div id="chat-box">
+        <div class="bubble friend-bubble">뭐해?</div>
+        <div class="bubble friend-bubble">??</div>
+        <div class="bubble friend-bubble">??</div>
+      </div>
+      <div class="footer">
+        <textarea name="" id="input" placeholder="메세지를 입력하세요.">
+        </textarea>
+        <i class="fa-regular fa-image"></i>
+        <button class="btn" id="senBtn">
+          <img src="../img/send.png" width="25" height="25" alt="" />
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
